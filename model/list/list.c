@@ -56,6 +56,7 @@ void insert(List * l, Destination d) {
 			switch (i) {
 				case BY_NAME:
 					condicio = strcmp(d.name, l->poi[i]->dest.name) > 0;
+					printf("Hola, funciona ordenacio per nom?\n");
 					break;
 				case BY_AVG_PRICE:
 					condicio = getAverageHotelPrice(d) > getAverageHotelPrice(l->poi[i]->dest);
