@@ -80,7 +80,6 @@ void planTrip(List *l){
 
 }
 
-
 void readWholeFile(FILE * f, List * l) {
 	int nDestinations, i;
 
