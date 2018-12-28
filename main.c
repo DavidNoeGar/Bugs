@@ -12,11 +12,11 @@ int main() {
 
 	FILE* f = fopen(PATH, "r");
 
-	if (f = NULL) {
+	if (f == NULL) {
 		printFileError(PATH);
 		return -1;
 	}
-
+	
 	List l = create();
 
 	readNewFile(&l);
