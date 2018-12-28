@@ -104,7 +104,7 @@ double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
 
 	advanceInDirection(&newI, &newJ, min);
 	printf("Aixo es el que retornes:  travelAltitude[i][j] + travelThroughAltitude(travelAltitude, i, j, n)\n");
-	return travelAltitude[i][j] + travelThroughAltitude(travelAltitude, i, j, n);
+	return travelAltitude[i][j]; //+ travelThroughAltitude(travelAltitude, i, j, n);
 }
 
 // Retorna una estimació del temps de viatge des de BCN segons l'altitud
