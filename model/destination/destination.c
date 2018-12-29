@@ -47,7 +47,7 @@ double getAverageHotelPrice(Destination dest) {
 	int i;
 
 	for (i = 1; i < dest.nHotels; i++) {
-		average += *(dest.hotelPrices + i) / dest.nHotels;
+		average += *(dest.hotelPrices) / dest.nHotels;
 	}
 
 	return average;
@@ -85,7 +85,6 @@ double checkAltitudeInDirection(double ** travelAltitude, int i, int j, int dire
 // Recorre recursivament la matriu buscant la mínima altitud i retornant el total recorregut
 // Podeu assumir que les dades sempre donaran un camí decreixent en altitud de 0, 0  a n-1, n-1
 double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
-	printf("\nHola bonic coredumped que passa?\n");
 	if (i == n - 1 && j == n - 1) {
 		return travelAltitude[i][j];
 	}
@@ -103,8 +102,7 @@ double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
 	}
 
 	advanceInDirection(&newI, &newJ, min);
-	printf("Aixo es el que retornes:  travelAltitude[i][j] + travelThroughAltitude(travelAltitude, i, j, n)\n");
-	return travelAltitude[i][j]; //+ travelThroughAltitude(travelAltitude, i, j, n);
+	return travelAltitude[i][j];
 }
 
 // Retorna una estimació del temps de viatge des de BCN segons l'altitud
