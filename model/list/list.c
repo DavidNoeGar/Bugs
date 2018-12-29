@@ -31,7 +31,6 @@ List create() {
 void insert(List * l, Destination d) {
 	int i;
 	int condicio;
-	printf("Hola anem fent printfs per a veure si furula l'insert.\n");
 
 	//Demanem memòria pel nou node i comprovem si n'hem obtingut
 	Node * nou  = (Node *) malloc (sizeof (Node));
@@ -48,15 +47,13 @@ void insert(List * l, Destination d) {
 			//Avancem al següent element i mirem si aquest encara l'hem de saltar
 			l->poi[i] = l->poi[i]->next[i];
 
-			if (l->poi[i] = l->last) {
+			if (l->poi[i] == l->last) {
 				break;
 			}
-			printf("\tHola aixo funciona i la i val %d\n", i);
 			//Les condicions per saltar un element depenen del mode d'ordenació
 			switch (i) {
 				case BY_NAME:
-					condicio = strcmp(d.name, l->poi[i]->dest.name) < 0;
-					printf("Hola, funciona ordenacio per nom?\n");
+					condicio = strcmp(d.name, l->poi[i]->dest.name) > 0;
 					break;
 				case BY_AVG_PRICE:
 					condicio = getAverageHotelPrice(d) > getAverageHotelPrice(l->poi[i]->dest);
