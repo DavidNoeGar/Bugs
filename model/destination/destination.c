@@ -151,11 +151,9 @@ char ** mapAltitudeTravel(Destination dest) {
 
 		for (j = 0; j < dest.n + 2; j++) {
 			map[i][j] = '#';
+		//	mapAltitude(dest.travelAltitude, map, 0, 0, dest.n);
 		}
 	}
-
-	mapAltitude(dest.travelAltitude, map, 0, 0, dest.n);
-
 	return map;
 }
 
@@ -169,7 +167,7 @@ void freeAll(Destination dest) {
 
 char * readString(FILE * file) {
 	int i = 0;
-	int size = 10;
+	int size = 30;
 	char tmp;
 	char* ret = (char*) malloc(sizeof(char) * size);
 
@@ -185,8 +183,8 @@ char * readString(FILE * file) {
 		fscanf(file, "%c", &tmp);
 	} while(tmp != '\n');
 
-	resize(&ret, i + 1);
-
+	resize(&ret, i);
+	ret[i] = '\0';
 
 	return ret;
 }
