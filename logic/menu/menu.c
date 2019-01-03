@@ -39,9 +39,9 @@ int isExit(int option) {
 
 char * readUserString() {
 	int i = 0;
-	int size = 10;
+	int size = 30;
 	char tmp;
-	char *ret = (char *) malloc(sizeof(char) * size);
+	char *ret = (char*) malloc(sizeof(char) * size);
 
 
 	scanf("%c", &tmp);
