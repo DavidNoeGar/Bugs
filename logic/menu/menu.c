@@ -43,7 +43,6 @@ char * readUserString() {
 	char tmp;
 	char *ret = (char*) malloc(sizeof(char) * size);
 
-
 	scanf("%c", &tmp);
 	do {
 		i++[ret] = tmp;
@@ -59,6 +58,7 @@ char * readUserString() {
 	ret[i] = '\0';
 
 	return ret;
+	free(ret);
 }
 
 char * askUserForPath() {
