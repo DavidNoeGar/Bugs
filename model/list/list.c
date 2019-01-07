@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <memory.h>
 
-
 List create() {
 	List l;
 
@@ -101,6 +100,7 @@ void removePoi(List * l, int mode) {
 			aux -> prev[i] -> next[i] = aux -> next[i];
 			aux -> next[i] -> prev[i] = aux -> prev[i];
 		}
+		freeAll(aux->dest);
 		free(aux);
 		l -> n--;
 	}
